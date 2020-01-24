@@ -5,6 +5,7 @@
 // @description  Osu谱面下载加速, 为中国玩家打造, 使用Rainng的镜像, 由Azure99维护
 // @author       Azure99
 // @homepage     https://www.rainng.com/osu-download-booster
+// @updateURL    https://greasyfork.org/scripts/395607-osu-download-booster/code/Osu%20Download%20Booster.user.js
 // @downloadURL  https://greasyfork.org/scripts/395607-osu-download-booster/code/Osu%20Download%20Booster.user.js
 // @supportURL   https://github.com/Azure99/osu-download-booster/issues
 // @icon         https://osu.ppy.sh/favicon.ico
