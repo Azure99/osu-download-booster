@@ -1,9 +1,12 @@
 // ==UserScript==
 // @name         Osu Download Booster
-// @namespace    https://www.rainng.com/osu-download-booster
-// @version      1.0
+// @namespace    https://www.rainng.com/
+// @version      1.1
 // @description  Osu谱面下载加速, 为中国玩家打造, 使用Rainng的镜像, 由Azure99维护
 // @author       Azure99
+// @homepage     https://www.rainng.com/osu-download-booster
+// @downloadURL  https://www.rainng.com/ser/download/osu-download-booster.user.js
+// @supportURL   https://github.com/Azure99/osu-download-booster/issues
 // @icon         https://osu.ppy.sh/favicon.ico
 // @include      http*://osu.ppy.sh/*
 // @grant        GM_xmlhttpRequest
