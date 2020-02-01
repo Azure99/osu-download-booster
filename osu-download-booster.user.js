@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Osu Download Booster
 // @namespace    https://www.rainng.com/
-// @version      1.5
-// @description  Osu谱面下载加速, 为中国玩家打造, 使用Rainng的镜像, 由Azure99维护
+// @version      1.6
+// @description  Osu谱面下载加速, 为中国玩家打造, 支持Rainng(Azure99维护)和Sayo(小夜维护)的镜像
 // @author       Azure99
 // @homepage     https://www.rainng.com/osu-download-booster
 // @supportURL   https://github.com/Azure99/osu-download-booster/issues
@@ -19,6 +19,8 @@
 
 (function () {
     'use strict';
+    const SAYO_URL = "https://osu.sayobot.cn/osu.php?s=";
+
     let lastId = -1;
     let latestDownloadUrl = '';
     let running = false;
@@ -58,7 +60,14 @@
                 '        class="btn-osu-big__content "><span class="btn-osu-big__left"><span class="btn-osu-big__text-top">镜像下载</span><span\n' +
                 '        class="btn-osu-hint btn-osu-big__text-bottom">获取地址中...</span></span><span class="btn-osu-big__icon"><span class="fa-fw"><i\n' +
                 '        class="fas fa-download"></i></span></span></span></a>'
-            )
+            );
+            $('.beatmapset-header__buttons').append(
+                '<a href="' + SAYO_URL + getBeatmapId() + '" data-turbolinks="false"\n' +
+                '   class="btn-osu-mirror-sayo btn-osu-big btn-osu-big--beatmapset-header js-beatmapset-download-link"><span\n' +
+                '        class="btn-osu-big__content "><span class="btn-osu-big__left"><span class="btn-osu-big__text-top">镜像下载</span><span\n' +
+                '        class="btn-osu-hint btn-osu-big__text-bottom">由Sayo加速</span></span><span class="btn-osu-big__icon"><span class="fa-fw"><i\n' +
+                '        class="fas fa-download"></i></span></span></span></a>'
+            );
         }
     }
 
