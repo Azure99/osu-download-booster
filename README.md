@@ -1,2 +1,6 @@
 # Osu Download Booster
-OSU! Beatmap下载加速, 为中国玩家打造的油猴脚本, 使用Rainng的镜像, 由Azure99维护
+Provide a near-original, fast and stable way to download osu! beatmap<br/>
+Mirror By **Rainng & Sayobot**
+
+# How to use
+[Greasy Fork](https://greasyfork.org/zh-CN/scripts/395607-osu-download-booster)
