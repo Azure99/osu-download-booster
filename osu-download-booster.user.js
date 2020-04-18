@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Osu Download Booster
 // @namespace    https://www.rainng.com/
-// @version      1.6
+// @version      1.7
 // @description  Osu谱面下载加速, 为中国玩家打造, 支持Rainng(Azure99维护)和Sayo(小夜维护)的镜像
 // @author       Azure99
 // @homepage     https://www.rainng.com/osu-download-booster
@@ -19,7 +19,7 @@
 
 (function () {
     'use strict';
-    const SAYO_URL = "https://osu.sayobot.cn/osu.php?s=";
+    const SAYO_URL = 'https://osu.sayobot.cn/osu.php?s=';
 
     let lastId = -1;
     let latestDownloadUrl = '';
@@ -75,7 +75,7 @@
         let btn = $('.btn-osu-mirror')[0];
         if (btn && btn.href !== latestDownloadUrl) {
             btn.href = latestDownloadUrl;
-            if (btn.href.startsWith("http://")) {
+            if (btn.href.startsWith('http://')) {
                 $('.btn-osu-hint')[0].innerText = '由Azure99加速';
             } else {
                 $('.btn-osu-hint')[0].innerText = '获取地址中...';
@@ -103,12 +103,15 @@
         let request = GM_xmlhttpRequest({
             method: 'GET',
             url: '/beatmapsets/' + mapId + '/download?noVideo=1',
+            headers: {
+                'Referer': 'https://osu.ppy.sh/beatmapsets/' + mapId
+            },
             onreadystatechange: function (status) {
                 let url = status.finalUrl.toString();
-                if (url.startsWith("https://bm") && status.readyState === 2) {
+                if (url.startsWith('https://bm') && status.readyState === 2) {
                     running = false;
                     request.abort();
-                    latestDownloadUrl = url.replace("https://", "http://").replace(".ppy.sh/", ".osu.rainng.com/");
+                    latestDownloadUrl = url.replace('https://', 'http://').replace('.ppy.sh/', '.osu.rainng.com/');
                 }
             }
         });
