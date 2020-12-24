@@ -75,7 +75,7 @@
         let btn = $('.btn-osu-mirror')[0];
         if (btn && btn.href !== latestDownloadUrl) {
             btn.href = latestDownloadUrl;
-            if (btn.href.startsWith('http://')) {
+            if (btn.href.startsWith('https://bm')) {
                 $('.btn-osu-hint')[0].innerText = '由Azure99加速';
             } else {
                 $('.btn-osu-hint')[0].innerText = '获取地址中...';
@@ -111,7 +111,7 @@
                 if (url.startsWith('https://bm') && status.readyState === 2) {
                     running = false;
                     request.abort();
-                    latestDownloadUrl = url.replace('https://', 'http://').replace('.ppy.sh/', '.osu.rainng.com/');
+                    latestDownloadUrl = url.replace('.ppy.sh/', '.osu.rainng.com/');
                 }
             }
         });
