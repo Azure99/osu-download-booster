@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Osu Download Booster
 // @namespace    https://www.rainng.com/
-// @version      2.0
+// @version      2.1
 // @description  Osu谱面下载加速, 为中国玩家打造, 支持Rainng(Azure99维护)和Sayo(小夜维护)的镜像
 // @author       Azure99
 // @homepage     https://www.rainng.com/osu-download-booster
@@ -117,7 +117,7 @@
         latestDownloadUrl = '';
         let request = GM_xmlhttpRequest({
             method: 'GET',
-            url: '/beatmapsets/' + mapId + '/download?noVideo=1',
+            url: '/beatmapsets/' + mapId + '/download',
             headers: {
                 'Referer': 'https://osu.ppy.sh/beatmapsets/' + mapId
             },
