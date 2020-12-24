@@ -28,6 +28,21 @@
     setBeatmapTimer();
     setButtonTimer();
 
+    injectGoogleAnalytics();
+
+    function injectGoogleAnalytics() {
+        let script = document.createElement('script');
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-61W3GZ0ZNP';
+        document.body.appendChild(script);
+
+        script = document.createElement('script');
+        script.innerHTML = "window.dataLayer = window.dataLayer || [];\n" +
+            "function gtag(){dataLayer.push(arguments);}\n" +
+            "gtag('js', new Date());\n" +
+            "gtag('config', 'G-61W3GZ0ZNP');";
+        document.body.appendChild(script)
+    }
+
     function setBeatmapTimer() {
         setInterval(function () {
             checkBeatmapId();
