@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Osu Download Booster
+// @name         OSU Download Booster
 // @namespace    https://www.rainng.com/
 // @version      2.2
 // @description  Osu谱面下载加速, 为中国玩家打造, 支持Rainng(Azure99维护)和Sayo(小夜维护)的镜像
