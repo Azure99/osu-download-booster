@@ -15,6 +15,7 @@
 // @connect      bm7.ppy.sh
 // @connect      bm8.ppy.sh
 // @license      MIT License
+// @antifeature  tracking
 // ==/UserScript==
 
 (function () {
