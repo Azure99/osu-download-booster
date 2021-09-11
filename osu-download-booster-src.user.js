@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         OSU Download Booster
 // @namespace    https://www.rainng.com/
-// @version      2.3
+// @version      2.4
 // @description  Osu谱面下载加速, 为中国玩家打造, 支持Rainng(Azure99维护)和Sayo(小夜维护)的镜像
 // @author       Azure99
 // @homepage     https://www.rainng.com/osu-download-booster
@@ -70,14 +70,14 @@
     function insertButton() {
         let needInsert = $('.js-beatmapset-download-link').length >= 1 && $('.btn-osu-mirror').length === 0;
         if (needInsert) {
-            $('.beatmapset-header__more').before(
+            $('.beatmapset-header__buttons').append(
                 '<a href="' + latestDownloadUrl + '" data-turbolinks="false"\n' +
                 '   class="btn-osu-mirror btn-osu-big btn-osu-big--beatmapset-header js-beatmapset-download-link"><span\n' +
                 '        class="btn-osu-big__content "><span class="btn-osu-big__left"><span class="btn-osu-big__text-top">镜像下载</span><span\n' +
                 '        class="btn-osu-hint btn-osu-big__text-bottom">获取地址中...</span></span><span class="btn-osu-big__icon"><span class="fa-fw"><i\n' +
                 '        class="fas fa-download"></i></span></span></span></a>'
             );
-            $('.beatmapset-header__more').before(
+            $('.beatmapset-header__buttons').append(
                 '<a href="' + SAYO_URL + getBeatmapId() + '" data-turbolinks="false"\n' +
                 '   class="btn-osu-mirror-sayo btn-osu-big btn-osu-big--beatmapset-header js-beatmapset-download-link"><span\n' +
                 '        class="btn-osu-big__content "><span class="btn-osu-big__left"><span class="btn-osu-big__text-top">镜像下载</span><span\n' +
