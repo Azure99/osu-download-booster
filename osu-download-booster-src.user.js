@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         OSU Download Booster
 // @namespace    https://www.rainng.com/
-// @version      2.6
+// @version      2.7
 // @description  Osu谱面下载加速, 为中国玩家打造, 支持Rainng(Azure99维护)和Sayo(小夜维护)的镜像
 // @author       Azure99
 // @homepage     https://www.rainng.com/osu-download-booster
@@ -70,16 +70,17 @@
     }
 
     function insertButton() {
-        let needInsert = $('.beatmapset-header__buttons').length == 1 && $('.beatmapset-header__buttons')[0].innerHTML.indexOf('/download"') && $('.btn-osu-mirror').length === 0;
+        let buttons = document.querySelector('.beatmapset-header__buttons');
+        let needInsert = buttons && buttons.innerHTML.indexOf('/download"') !== -1 && !document.querySelector('.btn-osu-mirror');
         if (needInsert) {
-            $('.beatmapset-header__buttons').append(
+            buttons.insertAdjacentHTML('beforeend',
                 '<a href="' + latestDownloadUrl + '" data-turbolinks="false"\n' +
                 '   class="btn-osu-mirror btn-osu-big btn-osu-big--beatmapset-header js-beatmapset-download-link"><span\n' +
                 '        class="btn-osu-big__content "><span class="btn-osu-big__left"><span class="btn-osu-big__text-top">镜像下载</span><span\n' +
                 '        class="btn-osu-hint btn-osu-big__text-bottom">获取地址中...</span></span><span class="btn-osu-big__icon"><span class="fa-fw"><i\n' +
                 '        class="fas fa-download"></i></span></span></span></a>'
             );
-            $('.beatmapset-header__buttons').append(
+            buttons.insertAdjacentHTML('beforeend',
                 '<a href="' + SAYO_URL + getBeatmapId() + '" data-turbolinks="false"\n' +
                 '   class="btn-osu-mirror-sayo btn-osu-big btn-osu-big--beatmapset-header js-beatmapset-download-link"><span\n' +
                 '        class="btn-osu-big__content "><span class="btn-osu-big__left"><span class="btn-osu-big__text-top">镜像下载</span><span\n' +
@@ -90,13 +91,13 @@
     }
 
     function updateButton() {
-        let btn = $('.btn-osu-mirror')[0];
+        let btn = document.querySelector('.btn-osu-mirror');
         if (btn && btn.href !== latestDownloadUrl) {
             btn.href = latestDownloadUrl;
             if (btn.href.startsWith('https://bm')) {
-                $('.btn-osu-hint')[0].innerText = '由Azure99加速';
+                document.querySelector('.btn-osu-hint').innerText = '由Azure99加速';
             } else {
-                $('.btn-osu-hint')[0].innerText = '获取地址中...';
+                document.querySelector('.btn-osu-hint').innerText = '获取地址中...';
             }
         }
     }
